@@ -38,16 +38,20 @@ const Keyboard = () => {
             {disabledLetters && defaultKeys.map((keyArray: Array<string>, i: number) => {
                 return (
                     <div key={i} className={`line${i+1}`}>
-                        {i === 2 && <Key keyVal={"ENTER"} bigKey={true} disabled={false} />}
+                        
                         {keyArray.map((key: string, y: number) => {
                             return (
                                 <Key key={`${i}${y}`} keyVal={key} bigKey={false} disabled={disabledLetters.includes(key)}/>
                             )
                         })}
-                        {i === 2 && <Key keyVal={"DELETE"} bigKey={true} disabled={false}/>}
+                        
                     </div>
                 )
             })}
+            <div className="line3">
+                {disabledLetters && <Key keyVal={"ENTER"} bigKey={true} disabled={false} />}
+                {disabledLetters && <Key keyVal={"DELETE"} bigKey={true} disabled={false}/>}
+            </div>
         </div>
     )
 }

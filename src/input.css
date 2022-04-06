@@ -3,77 +3,112 @@
 @tailwind utilities;
 
 .App {
-    @apply text-center bg-[#121212] w-screen h-screen text-white;
-  }
+  @apply text-center w-screen h-screen text-white;
+}
   
-  body {
-    @apply p-0 m-0;
-  }
+body {
+  @apply p-0 m-0 bg-[#121212];
+}
+ 
+nav h1 {
+  @apply m-0 text-white text-xl;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.game {
+  @apply w-screen flex items-center pt-12 flex-col;
+}
+ 
+.board {
+  @apply h-3/5 flex flex-col;
+}
   
-  nav {
-    @apply h-16 w-full m-0 border-b-2 border-solid border-gray-500 grid place-items-center;
-  }
+.row {
+  @apply flex flex-row m-1;
+  flex: 33%;
+}
   
-  nav h1 {
-    @apply m-0 text-white text-xl;
-    font-family: Helvetica, Arial, sans-serif;
+.letter {
+  @apply h-10 border-gray-500 border-solid border-2 m-1 grid place-items-center text-white font-bold;
+  flex: 33%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  
+#correct {
+  background-color: #528d4e;
+}
+  
+#almost {
+  background-color: #b49f39;
+}
+  
+#error {
+  background-color: #3a393c;
+}
+  
+.keyboard {
+  @apply h-[300px];
+}
+  
+.line1 {
+  @apply flex flex-row justify-center m-1;
+  flex: 33%;
+}
+.line2 {
+  @apply flex flex-row justify-center m-1;
+  flex: 33%;
+}
+.line3 {
+  @apply flex flex-row justify-center m-1;
+  flex: 33%;
+}
+  
+.key {
+  @apply m-1 rounded-md grid place-items-center bg-gray-500 text-white cursor-pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  
+#disabled {
+  background-color: #3a393c;
+}
+
+@media screen and (max-width: 1000px) {
+  .keyboard {
+    @apply w-[300px] mt-[20px];
+  }
+  .key {
+    @apply p-2 text-lg;
+  }
+  #big {
+    @apply p-2;
   }
   .game {
-    @apply w-screen h-4/5 flex items-center pt-12 flex-col;
+    @apply pt-4;
   }
-  
-  .board {
-    @apply w-[400px] h-3/5 flex flex-col;
-  }
-  
-  .row {
-    @apply flex flex-row m-1;
-    flex: 33%;
-  }
-  
   .letter {
-    @apply h-full border-gray-500 border-solid border-2 m-1 grid place-items-center text-2xl text-white font-bold;
-    flex: 33%;
-    font-family: Arial, Helvetica, sans-serif;
+    @apply text-lg;
   }
-  
-  #correct {
-    background-color: #528d4e;
+  .board {
+    @apply w-[300px];
   }
-  
-  #almost {
-    background-color: #b49f39;
-  }
-  
-  #error {
-    background-color: #3a393c;
-  }
-  
+}
+
+@media screen and (min-width: 1000px) {
   .keyboard {
-    @apply w-[600px] h-[300px] mt-[60px];
+    @apply w-[600px] mt-[60px];
   }
-  
-  .line1 {
-    @apply flex flex-row justify-center m-1;
-    flex: 33%;
-  }
-  .line2 {
-    @apply flex flex-row justify-center m-1;
-    flex: 33%;
-  }
-  .line3 {
-    @apply flex flex-row justify-center m-1;
-    flex: 33%;
-  }
-  
   .key {
-    @apply w-[50px] h-[70px] m-1 rounded-md grid place-items-center text-lg bg-gray-500 text-white cursor-pointer;
-    font-family: Arial, Helvetica, sans-serif;
+    @apply p-4 text-2xl;
   }
-  
   #big {
-    @apply w-[100px];
+    @apply p-4;
   }
-  #disabled {
-    background-color: #3a393c;
+  .game {
+    @apply pt-12;
   }
+  .letter {
+    @apply text-2xl;
+  }
+  .board {
+    @apply w-[400px];
+  }
+}
