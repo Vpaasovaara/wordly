@@ -5,21 +5,18 @@ import { AppContextType } from "../../utils/words";
 const Letter: React.FC<LetterProps> = ({ y, x }) => {
     const { board, setBoard, correctWord, currentAttempt, setDisabledLetters } = useContext(AppContext) as AppContextType
     const letter: string = board ? board[y][x] : ''
-    const [ letterState, setLetterState ] = useState<string>('')
+    //const [ letterState, setLetterState ] = useState<string>('')
 
-    
+    let dependency: number = currentAttempt ? currentAttempt.x : 0
+    let correct: boolean = correctWord ? (correctWord.toUpperCase()[x] === letter) : false
+    let almost: boolean = correctWord ? (!correct && letter !== '' && correctWord.toUpperCase().includes(letter)) : false
+    let letterState:string = currentAttempt ? (currentAttempt.x > y ? (correct ? 'correct' : almost ? 'almost' : 'error') : '') : ''
 
     useEffect(() => {
-        if (correctWord && currentAttempt) {
-            let correct: boolean = correctWord.toUpperCase()[x] === letter
-            let almost: boolean = !correct && letter !== '' && correctWord.toUpperCase().includes(letter)
-            setLetterState(currentAttempt.x > y ? (correct ? 'correct' : almost ? 'almost' : 'error') : '')
-            
-            if (letter !== '' && !correct && !almost) {
-                setDisabledLetters((prev: Array<string>): Array<string> => [...prev, letter])
-            }
+        if (letter !== '' && !correct && !almost) {
+           setDisabledLetters((prev: Array<string>): Array<string> => [...prev, letter])
         }
-    }, [correctWord, currentAttempt, letter, setDisabledLetters, x, y])
+    }, [dependency])
 
     return (
         <div className="letter" id={letterState}>

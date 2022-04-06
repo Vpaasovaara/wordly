@@ -469,69 +469,79 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .App {
-  text-align: center;
-  background-color: #121212;
-  width: 100vw;
   height: 100vh;
-  /* display: flex; */
-  color: white;
+  width: 100vw;
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 18 18 / var(--tw-bg-opacity));
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 body {
-  padding: 0%;
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 nav {
-  height: 60px;
-  width: 100%;
-  margin: 0;
-  border-bottom: 1px solid grey;
+  margin: 0px;
   display: grid;
+  height: 4rem;
+  width: 100%;
   place-items: center;
+  border-bottom-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
 nav h1 {
-  margin: 0;
+  margin: 0px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
   font-family: Helvetica, Arial, sans-serif;
-  color: white;
-  font-size: 45px;
 }
 
 .game {
-  width: 100vw;
-  height: calc(100vh - 170px);
   display: flex;
-  align-items: center;
-  padding-top: 50px;
+  height: 80%;
+  width: 100vw;
   flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
 }
 
 .board {
-  width: 450px;
-  height: 550px;
-  border: 1px solid black;
   display: flex;
+  height: 60%;
+  width: 400px;
   flex-direction: column;
 }
 
 .row {
-  flex: 33%;
+  margin: 0.25rem;
   display: flex;
   flex-direction: row;
-  margin: 5px;
+  flex: 33%;
 }
 
 .letter {
-  flex: 33%;
-  height: 100%;
-  border: 1px solid grey;
-  margin: 5px;
+  margin: 0.25rem;
   display: grid;
+  height: 100%;
   place-items: center;
-  font-size: 30px;
-  font-weight: bolder;
-  color: white;
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  flex: 33%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -548,47 +558,50 @@ nav h1 {
 }
 
 .keyboard {
-  width: 700px;
-  height: 300px;
   margin-top: 60px;
+  height: 300px;
+  width: 600px;
 }
 
 .line1 {
-  flex: 33%;
-  flex-direction: row;
+  margin: 0.25rem;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin: 5px;
+  flex: 33%;
 }
 
 .line2 {
-  flex: 33%;
+  margin: 0.25rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 5px;
+  flex: 33%;
 }
 
 .line3 {
-  flex: 33%;
+  margin: 0.25rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 5px;
+  flex: 33%;
 }
 
 .key {
-  width: 50px;
-  height: 70px;
-  margin: 5px;
-  border-radius: 4px;
+  margin: 0.25rem;
   display: grid;
-  place-items: center;
-  font-size: 20px;
-  background-color: grey;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  height: 70px;
+  width: 50px;
   cursor: pointer;
+  place-items: center;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #big {
