@@ -3895,6 +3895,8 @@ export const WORDS = [
     'moire',
     'scion',
     'henna',
+    'tommi',
+    'leena',
     'kraut',
     'dicks',
     'lifer',
